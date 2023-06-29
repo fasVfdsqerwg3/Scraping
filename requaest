@@ -1,0 +1,13 @@
+import requests
+from bs4 import BeautifulSoup
+
+# Загрузка веб-страницы
+url = 'https://example.com'
+response = requests.get(url)
+
+# Парсинг HTML-кода
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Извлечение данных
+title = soup.find('title').text
+print(title)
